@@ -23,7 +23,7 @@ int main()
 	sf::IpAddress serverIp = "";
 
 	int limitUsers = 0;
-	unsigned const short port = 54123;
+	unsigned short port = 54123;
 	std::list<TcpSocketClient*> sockets;
 	sockets.clear();
 
