@@ -95,6 +95,7 @@ int main()
 
 				if (isServer)
 				{
+					socketClient->heartbeatTimer = 0.f;
 					messageValue = "![" + socketClient->socket->getRemoteAddress().toString() + "] " + message;
 					sf::Packet packetSend;
 					packetSend << messageValue;
@@ -103,7 +104,10 @@ int main()
 						socketIndex->socket->send(packetSend);
 				}
 				else
+				{
 					messageValue = "!" + message;
+					heartbeatTimer = 0.f;
+				}	
 
 				log(messageValue);
 			}		
